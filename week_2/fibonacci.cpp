@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cassert>
-
 // The following code calls a naive algorithm for computing a Fibonacci number.
 //
 // What to do:
@@ -23,16 +22,28 @@ int fibonacci_naive(int n) {
 
 int fibonacci_fast(int n) {
     // write your code here
-    for (int i=0; i<=n; i++)
+
+
+    int a = 0;
+    int b = 1;
+    int c;
+    if(n<=1){
+      return n;
+    }
+    else{
+    for (int i=2; i<=n; i++)
     {
-        
+        c=a+b;
+        a=b;
+        b=c;
+      }
     }
 
-    return 0;
+    return c;
 }
 
 void test_solution() {
-    assert(fibonacci_fast(3) == 2);
+    assert(fibonacci_fast(1) == 1);
     assert(fibonacci_fast(10) == 55);
     for (int n = 0; n < 20; ++n)
         assert(fibonacci_fast(n) == fibonacci_naive(n));
@@ -42,8 +53,8 @@ int main() {
     int n = 0;
     std::cin >> n;
 
-    std::cout << fibonacci_naive(n) << '\n';
-    //test_solution();
-    //std::cout << fibonacci_fast(n) << '\n';
+    // std::cout << fibonacci_naive(n) << '\n';
+    // test_solution();
+    std::cout << fibonacci_fast(n) << '\n';
     return 0;
 }
