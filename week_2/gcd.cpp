@@ -1,5 +1,5 @@
 #include <iostream>
-
+//EUCLIDEAN ALGORITHM APPARENTLY. 
 int gcd_naive(int a, int b) {
   int current_gcd = 1;
   for (int d = 2; d <= a && d <= b; d++) {
@@ -12,9 +12,19 @@ int gcd_naive(int a, int b) {
   return current_gcd;
 }
 
+int gcd_fast(int a, int b) {
+    while (b != 0) {
+        int temp = a;
+        a = b;
+        b = temp % b;
+    }
+    return a;
+}
+
 int main() {
   int a, b;
   std::cin >> a >> b;
-  std::cout << gcd_naive(a, b) << std::endl;
+  // std::cout << gcd_naive(a, b) << std::endl;
+  std::cout << gcd_fast(a, b) << std::endl;
   return 0;
 }
