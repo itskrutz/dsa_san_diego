@@ -1,5 +1,7 @@
 #include <iostream>
 //PISANO PERIOD LOGIC. FUN.
+//BAD BAD BAD. THIS PROGRAM IS NOT WORKING AS WELL AS FIBO_TRY.CPP
+//NO IDEA WHY. THEY SEEM LITERALLY THE SAME DUDE!!
 
 // long long get_fibonacci_huge_naive(long long n, long long m) {
 //     if (n <= 1)
